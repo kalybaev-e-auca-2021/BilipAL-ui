@@ -3,7 +3,9 @@ import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import { DesktopOutlined, TeamOutlined } from '@ant-design/icons';
 import { useState } from 'react';
 import logo from './images/image.jpg';
+import { Link } from 'react-router-dom';
 import Image from './components/Image';
+// import Home from './Home.js';
 
 
 const { Header, Content, Footer, Sider } = Layout;
@@ -16,7 +18,8 @@ function getItem(label, key, icon, children) {
     };
 }
 const items = [
-    getItem('Option 1', '1', <PieChartOutlined />),
+    getItem('Option 1', '1', <PieChartOutlined />, [<Link to="/home">Go to Home</Link>]),
+    // getItem('Option 1', '1', <PieChartOutlined />),
     getItem('Option 2', '2', <DesktopOutlined />),
     getItem('User', 'sub1', <UserOutlined />, [
         getItem('Tom', '3'),
@@ -75,7 +78,6 @@ const App = () => {
                             background: colorBgContainer,
                         }}
                     >
-                        Bill is a cat.
                     </div>
                 </Content>
                 <Footer
