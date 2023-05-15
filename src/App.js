@@ -2,12 +2,8 @@ import { FileOutlined, PieChartOutlined, UserOutlined } from '@ant-design/icons'
 import { Breadcrumb, Layout, Menu, theme } from 'antd';
 import { DesktopOutlined, TeamOutlined } from '@ant-design/icons';
 import { useState } from 'react';
-import logo from './images/image.jpg';
 import { Link } from 'react-router-dom';
-import Image from './components/Image';
-// import Home from './Home.js';
-
-
+import AddHabitWindow from './components/AddHabitWindow';
 const { Header, Content, Footer, Sider } = Layout;
 function getItem(label, key, icon, children) {
     return {
@@ -55,8 +51,13 @@ const App = () => {
                     style={{
                         padding: 0,
                         background: colorBgContainer,
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "space-between",
                     }}
-                />
+                >
+                    <AddHabitWindow />
+                </Header>
                 <Content
                     style={{
                         margin: '0 16px',
@@ -70,15 +71,6 @@ const App = () => {
                         <Breadcrumb.Item>User</Breadcrumb.Item>
                         <Breadcrumb.Item>Bill</Breadcrumb.Item>
                     </Breadcrumb>
-                    <Image image={logo} />
-                    <div
-                        style={{
-                            padding: 24,
-                            minHeight: 360,
-                            background: colorBgContainer,
-                        }}
-                    >
-                    </div>
                 </Content>
                 <Footer
                     style={{
@@ -88,7 +80,7 @@ const App = () => {
                     Web-design ©2023 Created by ABE inc.
                 </Footer>
             </Layout>
-        </Layout>
+        </Layout >
     );
 };
 export default App;
